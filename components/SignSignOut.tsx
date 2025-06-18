@@ -5,6 +5,8 @@ function SignSignOut() {
   return (
     <div>
           <br /><br />
+          <button onClick={() => ''}>New User</button>
+          <br /><br />
           <button type="button" onClick={() => signIn()}>sign in</button>
           <br /><br />
           <button type="button" onClick={() => signOut()}>sign out</button>

@@ -1,10 +1,8 @@
 import prisma from "@/db";
-import { userSchema } from "@/types/validationSchema";
+import { loginUser } from "@/types/validationSchema";
 import { passwordMatch } from "@/utils/passwordmatch";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials"
-import { threadId } from "worker_threads";
-
 
 
 
@@ -19,7 +17,7 @@ const handler =  NextAuth({
                async authorize(credentials) {
                     if (!credentials) return null;
                     try {
-                         const validate = userSchema.safeParse(credentials);
+                         const validate = loginUser.safeParse(credentials);
 
                          if(!validate.success) {
                               console.log(validate.error);

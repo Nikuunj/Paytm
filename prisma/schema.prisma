@@ -8,9 +8,18 @@ datasource db {
 }
 
 model User {
-    id Int @id @default(autoincrement())
-    email String @unique
-    first_name String
-    last_name String
-    password String
+    id           String    @id @default(uuid())
+    email        String    @unique
+    first_name   String
+    last_name    String
+    password     String
+}
+
+model Otp {
+    id           String    @id @default(uuid())
+    otp          String
+    email        String    @unique
+    first_name   String
+    last_name    String
+    password     String
 }
