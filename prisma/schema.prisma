@@ -25,7 +25,7 @@ model Otp {
     password     String
 }
 
-model Bank {
+model Bank { 
     user           User @relation(fields: [userId] , references: [id])
     userId         String @unique
     balance        Int
