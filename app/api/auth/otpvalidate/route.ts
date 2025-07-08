@@ -28,6 +28,13 @@ export async function POST(request: NextRequest) {
                 password: otp_object.password
             }
         })
+        await prisma.bank.create({
+            data: {
+                userId: user_new.id,
+                balance: 1 + Math.floor(Math.random() * 10000)
+            }
+        })
+
         await prisma.otp.delete({
             where: {
                 id: otpId
